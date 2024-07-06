@@ -1,11 +1,22 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Header from './Header'
+import { checkValidData } from '../utils/Validate';
 
 const Login = () => {
 
     const [isSignInForm,setIsSignInForm]=useState(true);
+    const [errorMessage,seterrorMessage]=useState(null);
 
-    const toggleSignInForm =() =>{
+    const email=useRef(null);
+    const password=useRef(null);
+
+    const HandleButtonClick = ()=>{
+        // Validate the form data
+        const message = checkValidData(email.current.value,password.current.value);
+        seterrorMessage(message);
+    };
+
+    const toggleSignInForm = () =>{
         setIsSignInForm(!isSignInForm);
     }
   return (
@@ -17,28 +28,50 @@ const Login = () => {
                 alt='Body'
             />
         </div>
-        <form className='w-3/12 absolute p-12 bg-black my-40 mx-auto right-0 left-0 text-white bg-opacity-80 rounded-lg'>
+        <form
+        onSubmit={(e)=>e.preventDefault()} 
+        className='w-3/12 absolute p-12
+                 bg-black my-40 mx-auto right-0 left-0
+                  text-white bg-opacity-80 rounded-lg'>
+
         <h1 className=' font-bold text-3xl p-4'>{isSignInForm ? "Sign In" :"Sign Up"}</h1>
             
             {!isSignInForm &&( 
             <input
                 type="text" 
                 placeholder='Full Name' 
-                className='p-4 my-2 w-full bg-slate-300 bg-opacity-10  rounded-lg border-2  border-neutral-50 border-opacity-25 '
+                className='p-4 my-2 w-full
+                 bg-slate-300 bg-opacity-10  rounded-lg border-2
+                 border-neutral-50 border-opacity-25 '
             />)}
     
             <input
+                ref={email}
                 type="text" 
                 placeholder='Email Address' 
-                className='p-4 my-2 w-full bg-slate-300 bg-opacity-10  rounded-lg border-2  border-neutral-50 border-opacity-25 '
+                className='p-4 my-2 w-full
+                     bg-slate-300 bg-opacity-10  
+                    rounded-lg border-2 
+                     border-neutral-50
+                    border-opacity-25 '
             />
             <input 
+                ref={password}
                 type="password" 
                 placeholder='Password' 
-                className='p-4 my-2 w-full bg-slate-300 bg-opacity-10 rounded-lg border-2  border-neutral-50 border-opacity-25'
+                className='p-4 my-2 w-full
+                 bg-slate-300
+                  bg-opacity-10 rounded-lg 
+                  border-2 
+                 border-neutral-50 
+                  border-opacity-25'
             />
+            <p className='text-red-500 font-bold text-lg p-2'>{errorMessage}</p>
             <button 
-                className='p-4 my-2 bg-red-700 w-full rounded-lg border-2  border-neutral-50 border-opacity-25'>{isSignInForm ? "Sign In" :"Sign Up"}
+                className='p-4 my-2
+                 bg-red-700 
+                 w-full rounded-lg border-2 
+                  border-neutral-50 border-opacity-25 'onClick={HandleButtonClick}>{isSignInForm ? "Sign In" :"Sign Up"}
             </button>
             <p className='py-6 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm ? "New to Netflix? Sign Up Now" :"Already Registered Sign In Now"}</p>
             
