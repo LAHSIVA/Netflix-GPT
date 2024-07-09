@@ -17,6 +17,14 @@
 - - npm i react-redux
 - Created Redux Store with userSlice
 - Successfully redirecting to Browse page with help of Navigate
+- Implemented SignOut
+- Updated Photo
+- Created Update Profile Api Calls
+
+
+- To Do
+- - Browse Page
+- - Using TMDB Movies
 # Features
 
 - Login/SignUp

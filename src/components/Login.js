@@ -1,15 +1,18 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
 import { checkValidData } from '../utils/Validate';
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userslice';
 
 const Login = () => {
 
     const [isSignInForm,setIsSignInForm]=useState(true);
     const [errorMessage,seterrorMessage]=useState(null);
     const Navigate=useNavigate();
+    const dispatch=useDispatch();
 
     const email=useRef(null);
     const password=useRef(null);
@@ -28,8 +31,25 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
+                updateProfile(user, {
+                    displayName: "name.current.value", photoURL: "https://avatars.githubusercontent.com/u/99829445?v=4"
+                  }).then(() => {
+                    const {uid,email,displayName,photoURL} = auth.currentUser;
+              dispatch(
+                addUser({
+                    uid:uid,
+                    email:email,
+                    displayName:displayName,
+                    photoURL:photoURL
+                })
+            );
+              
+                    Navigate("/browse")
+
+                  }).catch((error) => {
+                    seterrorMessage(error.message);
+                  });
                 console.log(user);
-                Navigate("/browse")
             })
             .catch((error) => {
                 const errorCode = error.code;
