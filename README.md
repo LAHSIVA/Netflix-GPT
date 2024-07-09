@@ -16,6 +16,7 @@
 - - npm i -D @reduxjs/toolkit
 - - npm i react-redux
 - Created Redux Store with userSlice
+- Successfully redirecting to Browse page with help of Navigate
 # Features
 
 - Login/SignUp
