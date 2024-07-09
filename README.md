@@ -10,7 +10,12 @@
 - useRef Hook
 - Deploying our App to production
 - Create signup user Account in Firebase
-
+- SignUp Authentication get AcessToken
+- SignIn Authentication get AcessToken
+- We need to use User object and store it in Redux Store
+- - npm i -D @reduxjs/toolkit
+- - npm i react-redux
+- Created Redux Store with userSlice
 # Features
 
 - Login/SignUp
