@@ -20,6 +20,9 @@
 - Implemented SignOut
 - Updated Photo
 - Created Update Profile Api Calls
+- Bug fix: Sign Up user displayName and profile picture Update
+- Bug fix: If the user is not logged in Redirect /browse to Login Page and vice-versa(onAuthStateChange)
+- Feature : If user logged in and trying access to go to log in page directed again to Browsepage(onAuthStateChange)
 
 
 - To Do
