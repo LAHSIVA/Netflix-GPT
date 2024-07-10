@@ -23,8 +23,8 @@
 - Bug fix: Sign Up user displayName and profile picture Update
 - Bug fix: If the user is not logged in Redirect /browse to Login Page and vice-versa(onAuthStateChange)
 - Feature : If user logged in and trying access to go to log in page directed again to Browsepage(onAuthStateChange)
-- Goodway : unsubscribed to the onAuthStateChanged callback 
-
+- Goodway : unsubscribed to the onAuthStateChanged callback when component unmounts to increase performance
+- Add Hardcoded values to Constant file
 
 - To Do
 - - Browse Page
