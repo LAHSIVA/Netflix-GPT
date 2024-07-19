@@ -57,9 +57,9 @@ const Header = () => {
           />
           <button onClick={handleSignOut} className='font-bold text-red-700'>(Sign Out)</button>
           </div>
-        )}
+      ) }
     </div>
-  )
-}
+  );
+};
 
 export default Header

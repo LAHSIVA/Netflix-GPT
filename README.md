@@ -32,6 +32,14 @@
 - - - getNowPlayingMovies API
 
 
+
+- MainContainer
+    - - VideoBackground
+    - - VideoTitle
+- SecondaryContainer
+    - - MovieList*N
+    - - cards*n
+     
 # Features
 
 - Login/SignUp
