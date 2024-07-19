@@ -25,10 +25,13 @@
 - Feature : If user logged in and trying access to go to log in page directed again to Browsepage(onAuthStateChange)
 - Goodway : unsubscribed to the onAuthStateChanged callback when component unmounts to increase performance
 - Add Hardcoded values to Constant file
-
-- To Do
-- - Browse Page
+- After Register to TMDB recieved 
+- - API KEY
+- - API Read Access Token
 - - Using TMDB Movies
+- - - getNowPlayingMovies API
+
+
 # Features
 
 - Login/SignUp
