@@ -98,7 +98,7 @@ const Login = () => {
                  bg-black my-40 mx-auto right-0 left-0
                   text-white bg-opacity-80 rounded-lg'>
 
-        <h1 className=' font-bold text-3xl p-4'>{isSignInForm ? "Sign In" :"Sign Up"}</h1>
+        <h1 className=' font-bold text-3xl p-4 animate-pulse'>{isSignInForm ? "Sign In" :"Sign Up"}</h1>
             
             {!isSignInForm &&( 
             <input
@@ -135,7 +135,7 @@ const Login = () => {
                 className='p-4 my-2
                  bg-red-700 
                  w-full rounded-lg border-2 
-                  border-neutral-50 border-opacity-25 'onClick={HandleButtonClick}>{isSignInForm ? "Sign In" :"Sign Up"}
+                  border-neutral-50 border-opacity-25 animate-pulse 'onClick={HandleButtonClick}>{isSignInForm ? "Sign In" :"Sign Up"}
             </button>
             <p className='py-6 cursor-pointer' onClick={toggleSignInForm}>{isSignInForm ? "New to Netflix? Sign Up Now" :"Already Registered Sign In Now"}</p>
             

@@ -9,7 +9,7 @@ const MainContainer = () => {
   // Early Return
   if(!movies) return;
 
-  const mainMovie = movies[6];
+  const mainMovie = movies[2];
   
 
   const {original_title,overview,id}=mainMovie;
