@@ -39,6 +39,13 @@
 - SecondaryContainer
     - - MovieList*N
     - - cards*n
+
+- use PopularMovies hook 
+- use TopRatedMovies hook
+- use TrailerVideo hook
+- use UpcomingMovies hook
+
+- GPT Search Feature
      
 # Features
 

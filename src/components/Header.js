@@ -50,12 +50,13 @@ const Header = () => {
             alt="Logo"
         />
         {user && (<div className="flex p-2">
+          <button className="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-2">GPT Search</button>
           <img 
-          className='w-12 h-12'
+          className='w-12 h-12 mt-1 rounded-xl'
           alt="usericon" 
           src={user?.photoURL}
           />
-          <button onClick={handleSignOut} className='font-bold text-red-700'>(Sign Out)</button>
+          <button onClick={handleSignOut} className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-2 ml-3">Sign Out</button>
           </div>
       ) }
     </div>
